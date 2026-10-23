@@ -31,3 +31,11 @@ No Windows com Python instalado, execute `criar_exe.bat`. O executável será cr
 
 ## Gerar EXE automaticamente no Windows (sem executar scripts localmente)
 O projeto inclui `.github/workflows/build-windows.yml`. Se você enviar a pasta do projeto para um repositório GitHub, abra **Actions → Build Windows EXE → Run workflow**. Ao terminar, baixe o artefato `Sincroniza-Music-Windows` na execução. O ZIP contém o executável e os arquivos que ele precisa. O GitHub exige uma conta e que você crie/envie o repositório; este projeto não pode criar isso na sua conta sem autorização.
+
+
+## Personalização e créditos
+- Tema claro e escuro, cor de destaque e papel de parede local.
+- Tela de agradecimento da versão de desenvolvimento com links sociais de Dri GT3.
+- Instagram: https://www.instagram.com/oryankk.skt/
+- TikTok: https://www.tiktok.com/@ryandefoutt
+- Efeitos de transparência/blur nativos completos podem variar conforme a versão e as configurações do Windows.
