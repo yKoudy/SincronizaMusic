@@ -10,8 +10,12 @@ jobs:
   build:
     runs-on: windows-latest
 
+    defaults:
+      run:
+        working-directory: SincronizaMusic
+
     steps:
-      - name: Baixar codigo
+      - name: Baixar projeto
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -25,21 +29,14 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install pyinstaller
 
-      - name: Verificar arquivos
-        run: |
-          if (!(Test-Path "src/main.py")) { throw "Falta src/main.py" }
-          if (!(Test-Path "requirements.txt")) { throw "Falta requirements.txt" }
-        shell: pwsh
-
-      - name: Gerar aplicativo EXE
+      - name: Compilar aplicativo
         run: |
           python -m PyInstaller --noconfirm --clean --windowed --name "Sincroniza Music" --collect-all pygame src/main.py
-        shell: pwsh
 
-      - name: Publicar aplicativo
+      - name: Disponibilizar EXE
         uses: actions/upload-artifact@v4
         with:
           name: Sincroniza-Music-Windows
-          path: "dist/Sincroniza Music/"
+          path: "SincronizaMusic/dist/Sincroniza Music/"
           if-no-files-found: error
           retention-days: 7
